@@ -14,7 +14,7 @@ function startCanvas() {
 
   context.strokeStyle = "#000000"
   context.lineJoin = "round"
-  context.lineWidth = 8
+  context.lineWidth = 6
 
   canvas.addEventListener("touchstart", function (e) {
     var touch = e.touches[0]
@@ -69,7 +69,7 @@ function addClick(x, y, dragging) {
 }
 
 function clearCanvas() {
-  context.clearRect(0, 0, 200, 200)
+  context.clearRect(0, 0, 140, 140)
 }
 
 function resetCanvas() {
@@ -96,7 +96,7 @@ function drawCanvas() {
 }
 
 function getPixels() {
-  let rawPixels = context.getImageData(0, 0, 200, 200).data
+  let rawPixels = context.getImageData(0, 0, 140, 140).data
   let _pixels = []
   let pixels = []
 
@@ -104,8 +104,8 @@ function getPixels() {
     _pixels.push(rawPixels[i + 3])
   }
 
-  for (i=0; i < _pixels.length; i += 800) {
-    for (j=0; j < 200; j += 4) {
+  for (i=0; i < _pixels.length; i += 700) {
+    for (j=0; j < 140; j += 5) {
       pixels.push(_pixels[i+j])
     }
   }
@@ -119,8 +119,8 @@ function addDataAction() {
   document.getElementById("add-data-form").submit()
 }
 
-function practiceAction() {
+function GuessAction() {
   let pixels = getPixels()
   document.getElementById("pixels").value = pixels
-  document.getElementById("practice-form").submit()
+  document.getElementById("draw-form").submit()
 }
