@@ -4,7 +4,7 @@
 <div class="main-container">
   <div>
     <a href="/" class="button is-info">
-      <p style="font-size: larger;">GO HOME</p>
+      <p style="font-size: larger; margin-left: 5px;">GO HOME</p>
     </a>
     <br>
   </div>
@@ -22,11 +22,13 @@
     </form>
   </div>
   <br>
+  <br>
   <div>
-    <h1 style="font-size: xx-large; font-family: Arial, Helvetica, sans-serif;">AI- Predictions :</h1>
+    <h1 class="button is-danger" style="font-size: larger; font-family: Arial, Helvetica, sans-serif; margin-left: 5px;">AI - Predictions :</h1>
+    <br>
     <br>
     {% for class_name in pred %}
-  <li class="list-group-item" style="font-size: large; margin-left: 40px;">
+  <li class="list-group-item" style="font-size: large; margin-left: 25px;">
     {{ class_name.upper() }}
   </li>
   {% endfor %}
